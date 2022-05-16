@@ -1,16 +1,11 @@
-function test (arr){
-    let sentence = '';
-    for (let i = 0; i < arr.length; i++){
-        for (let j = 0; j < arr[i].length; j++){
-            sentence += arr[j][i]
+function isogram(str){
+    str = str.toLowerCase()
+    for (let i = 0; i < str.length; i++){
+        if(str.indexOf(str.charAt(i), i + 1) >= 0){
+            return 'characters repeat'
         }
-        sentence+= ' '
     }
-    return sentence.trim()
+    return 'no repeated characters'
 }
 
-console.table(test(
-[['J','L','L','M']
-,['u','i','i','a']
-,['s','v','f','n']
-,['t','e','e','']]))
+console.log(isogram('sam'))
